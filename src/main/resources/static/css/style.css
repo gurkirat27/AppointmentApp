@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+body {
+		color: #BD1313;
+		font-size: 2em;
+}
+
+.odd {
+		background-color: #BD1313;
+}
+
+.even{
+	background-color: #BD1313;
+	
+}

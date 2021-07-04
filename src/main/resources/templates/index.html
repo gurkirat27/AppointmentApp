@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>CRUD</title>
+<link rel="stylesheet" type="text/css"
+	href="/css/styles.css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Add Appointment</h2>
+<form th:method="post" th:action="@{/}" th:object="${ap}">
+	FirstName		: <input type="text" th:field="*{name}"><br>
+	Email			: <input type="email" th:field="*{email}"><br>
+					  <input type="submit" value="add Appointment">
+</form>
+<h2>Appointment List</h2>
+<table>
+	<tr th:each="s : ${list}">
+		<td>
+			<a href="" th:href="@{/edit/{id}(id=${s.id})}">Edit</a>&nbsp;
+			<a href="" th:href="@{/delete/{id}(id=${s.id})}">Delete</a>&nbsp;
+		</td>
+		<td th:text="${s.id}"></td>
+		<td th:text="${s.name}"></td>
+		<td th:text="${s.email}"></td>
+	</tr>
+</table>
+</body>
+</html>
